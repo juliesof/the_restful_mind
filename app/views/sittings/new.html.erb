@@ -1,0 +1,26 @@
+
+<%= form_for new_sitting_path do |f| %>
+<div id='start-button'>
+<%= f.button :start_time %> <br>
+</div>
+
+<div id='end-button'>
+<%= f.button :end_time %>
+<br>
+</div>
+
+<div id='sitting-rating'>
+placeholder for ratings
+<%= f.label :artist %> <br><br><br>
+</div>
+
+<div id='sitting-note'>
+Write a note about your sitting
+<%= f.text_field :note_post_sitting %>
+<br>
+</div>
+
+<div id='submit-button'>
+<%= f.submit %>
+</div>
+<% end %>
