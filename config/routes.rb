@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :sitting
+  resources :sittings
 
   root to: 'sittings#new'
 
