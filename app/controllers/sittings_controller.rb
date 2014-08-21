@@ -1,7 +1,9 @@
 class SittingsController < ApplicationController
 
-  def index
+  respond_to :html, :json
 
+  def index
+    @sittings = Sitting.all
   end
 
   def show
@@ -13,19 +15,13 @@ class SittingsController < ApplicationController
   end
 
   def create
-     @sitting = Sitting.new(sitting_params)
+    @sitting = Sitting.new(sitting_params)
 
-    respond_to do |format|
-      if @sitting.save
-        format.html { redirect_to @sitting, notice: 'Sitting was successfully created.' }
-        format.json { render :show, status: :created, location: @sitting }
-      else
-        format.html { render :new }
-        format.json { render json: @sitting.errors, status: :unprocessable_entity }
-      end
-    end
+    @sitting.save
+    respond_with @sitting
   end
 
+  private
   def sitting_params
     params.require(:sitting).permit(:start_meditation,
      :end_meditation, :rating_post_sitting, :note_post_sitting)

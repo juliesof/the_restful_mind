@@ -1,0 +1,10 @@
+<h2>Stats about your sitting</h2>
+
+<ul>
+  <% @sittings.each do |sit| %>
+    <li><%= sit.start_time %></li>
+    <li><%= sit.end_time %></li>
+    <li><%= sit.rating_post_sitting %></li>
+    <li><%= sit.note_post_sitting %></li>
+  <% end %>
+</ul>
