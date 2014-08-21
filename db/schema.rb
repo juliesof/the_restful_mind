@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821145604) do
+ActiveRecord::Schema.define(version: 20140821161503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "quote_lists", force: true do |t|
+    t.string   "list_name"
+    t.text     "quote_01"
+    t.text     "quote_02"
+    t.text     "quote_03"
+    t.text     "quote_04"
+    t.text     "quote_05"
+    t.text     "quote_06"
+    t.text     "quote_07"
+    t.text     "quote_08"
+    t.text     "quote_09"
+    t.text     "quote_10"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "quote_lists", ["user_id"], name: "index_quote_lists_on_user_id", using: :btree
 
   create_table "sittings", force: true do |t|
     t.datetime "start_time"
