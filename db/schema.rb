@@ -11,22 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821163342) do
+ActiveRecord::Schema.define(version: 20140825155147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "quote_lists", force: true do |t|
-    t.string   "list_name"
-    t.integer  "user_id"
+  create_table "badge_types", force: true do |t|
+    t.string   "day"
+    t.string   "week"
+    t.string   "month"
+    t.string   "quarter"
+    t.string   "year"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "quote_lists", ["user_id"], name: "index_quote_lists_on_user_id", using: :btree
+  create_table "earned_badges", force: true do |t|
+    t.integer  "users_id"
+    t.integer  "badge_types_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "quote_lists", force: true do |t|
+    t.string   "list_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "quotes", force: true do |t|
-    t.text     "quote_text"
+    t.text     "text"
     t.integer  "quote_list_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -43,10 +57,23 @@ ActiveRecord::Schema.define(version: 20140821163342) do
   add_index "sittings", ["user_id"], name: "index_sittings_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "name"
-    t.string   "email"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quote_list_id"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["quote_list_id"], name: "index_users_on_quote_list_id", using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

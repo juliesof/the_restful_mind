@@ -1,4 +1,4 @@
 class Quote < ActiveRecord::Base
-  references :quote_list
+  belongs_to :quote_list
 
 end

@@ -2,21 +2,28 @@
 <html>
 <head>
   <title>TheRestfulMind</title>
-  <%= stylesheet_link_tag
-    '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
-  <%= javascript_include_tag
-    '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <%= stylesheet_link_tag
-    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
+  <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+  <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <%= csrf_meta_tags %>
+
 </head>
 
 <body>
+
+  <% flash.each do |name, msg| %>
+    <% if msg.is_a?(String) %>
+      <%= content_tag :div, msg, :class => "flash_#{name}" %>
+    <% end %>
+  <% end %>
+
   <%= render partial: "layouts/navbar" %>
+  <%= render partial: "layouts/inspirational_quotes" %>
 
   <%= yield %>
 

@@ -1,4 +1,4 @@
 class Sitting <ActiveRecord::Base
-  references :user
+  belongs_to :user
 
 end

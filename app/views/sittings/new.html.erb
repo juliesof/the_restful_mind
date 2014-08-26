@@ -4,28 +4,9 @@
         <div id='start-button'>
             <%= f.button :start_time%>
         </div>
-
-        <div id='timer'>
-            <%= f.select :hours, [0, 1, 2] %>
-            <%= f.select :minutes, %w(0..59) %>
-            <%= f.select :seconds, %w[0..59] %>
-        </div>
     </div>
     <div id='end-button'>
         <%= f.button :end_time %><br>
     </div>
 
-    <div id='final-step'>
-
-
-        <div id='sitting-note'>
-        <%= f.text_area :note_post_sitting%>
-        <%= f.label 'Write a note about your sitting' %>
-        <br>
-        </div>
-
-        <div id='submit-button'>
-        <%= f.submit %>
-        </div>
-    </div>
 <% end %>
