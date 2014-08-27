@@ -1,5 +1,8 @@
 Quote.delete_all
 QuoteList.delete_all
+User.delete_all
+EarnedBadge.delete_all
+BadgeType.delete_all
 
 
 ql1 = QuoteList.create!(list_name: 'Literary Quotes')
@@ -23,4 +26,11 @@ Quote.create!(quote_list: ql2, text: 'I have lived with several Zen masters -- a
 Quote.create!(quote_list: ql2, text: 'Undisturbed calmness of mind is attained by cultivating friendliness toward the happy, compassion for the unhappy, delight in the virtuous, and indifference toward the wicked. ~Patanjali')
 Quote.create!(quote_list: ql2, text: 'If we learn to open our hearts, anyone, including the people who drive us crazy, can be our teacher. ~Pema Chodron')
 Quote.create!(quote_list: ql2, text: "We don\'t set out to save the world; we set out to wonder how other people are doing and reflect on how our actions affect other people\'s hearts. ~Pema Chodron")
+
+BadgeType.create!(name: 'day', img_url: 'day badge')
+BadgeType.create!(name: 'week', img_url: 'week badge')
+BadgeType.create!(name: 'month', img_url: 'month badge')
+BadgeType.create!(name: 'quarter', img_url: 'quarter badge')
+BadgeType.create!(name: 'year', img_url: 'year badge')
+
 

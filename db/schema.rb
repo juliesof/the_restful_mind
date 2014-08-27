@@ -11,26 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140825155147) do
+ActiveRecord::Schema.define(version: 20140827143124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "badge_types", force: true do |t|
-    t.string   "day"
-    t.string   "week"
-    t.string   "month"
-    t.string   "quarter"
-    t.string   "year"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "img_url"
   end
 
   create_table "earned_badges", force: true do |t|
-    t.integer  "users_id"
-    t.integer  "badge_types_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "badge_type_id"
   end
 
   create_table "quote_lists", force: true do |t|
@@ -46,16 +43,6 @@ ActiveRecord::Schema.define(version: 20140825155147) do
     t.datetime "updated_at"
   end
 
-  create_table "sittings", force: true do |t|
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "sittings", ["user_id"], name: "index_sittings_on_user_id", using: :btree
-
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -70,6 +57,7 @@ ActiveRecord::Schema.define(version: 20140825155147) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "quote_list_id"
+    t.text     "sitting_notes"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

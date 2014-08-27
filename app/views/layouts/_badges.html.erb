@@ -1,0 +1,9 @@
+<h2>Your Badges</h2>
+
+<div id='earned-badges-box'>
+  <% if user_signed_in? %>
+    <% @earned_badges.each do |eb| %>
+      <%= eb.badge_type.img_url %><br>
+    <% end %>
+  <% end %>
+</div>
