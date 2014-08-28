@@ -10,6 +10,6 @@ class EarnedBadgesController < ApplicationController
     @day_badge.badge_type = BadgeType.find_by(name: 'day')
     @day_badge.save
 
-    redirect_to root_path
+    redirect_to new_sitting_path
   end
 end

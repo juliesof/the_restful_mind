@@ -1,0 +1,11 @@
+
+  <% @sitting_info.each do |n| %>
+    <ul>
+      <% if !n.notes.nil? %>
+        <li><%= n.notes %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <p><%= link_to 'Add a sitting', new_earned_badge_path %></p>
+

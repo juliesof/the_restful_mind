@@ -4,7 +4,6 @@ class EarnedBadge < ActiveRecord::Base
 
   after_save :adjust
 
-  #increments and destroys badges
   def adjust
     if EarnedBadge.days(user.id).size >= 7
       EarnedBadge.create_week(user.id)
