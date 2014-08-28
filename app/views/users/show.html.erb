@@ -1,7 +1,7 @@
 
   <% @sitting_info.each do |n| %>
     <ul>
-      <% if !n.notes.nil? %>
+      <% if !n.notes.blank? %>
         <li><%= n.notes %></li>
       <% end %>
     </ul>

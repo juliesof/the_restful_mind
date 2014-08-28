@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :assign_quote, :access_earned_badges
 
   def after_sign_in_path_for(resource)
-    new_earned_badge_path
+    current_user
   end
 
   private
