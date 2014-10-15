@@ -1,5 +1,6 @@
 <br><br><br>
 <div id='earned-badges-box'>
+  <span style="float:right">
   <% if user_signed_in? %>
     <h2>Your Badges</h2>
     <% @earned_badges.each do |eb| %>
@@ -8,4 +9,5 @@
       </ul>
     <% end %>
   <% end %>
+  </span>
 </div>

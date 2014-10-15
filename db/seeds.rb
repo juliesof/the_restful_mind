@@ -15,8 +15,8 @@ Quote.create!(quote_list: ql1,
   text: "The mystery of life isn\'t a problem to solve, but a reality to be experienced. ~Frank Herbert")
 Quote.create!(quote_list: ql1,
   text: "I know not all that may be coming, but be it what it will, I\'ll go to it laughing. ~Herman Melville")
-Quote.create!(quote_list: ql1, text: 'The simplr things are also the most extraordinary things, and only the wise can see them. ~Paolo Coehlo')
-Quote.create!(quote_list: ql1, text: "You asked me how to get out of the finite dimenstions when I feel like it. I certainly don\'t use logic when I do it. Logic\'s the first thing you have to get rid of. ~J.D. Salinger")
+Quote.create!(quote_list: ql1, text: 'The simple things are also the most extraordinary things, and only the wise can see them. ~Paolo Coehlo')
+Quote.create!(quote_list: ql1, text: "You asked me how to get out of the finite dimensions when I feel like it. I certainly don\'t use logic when I do it. Logic\'s the first thing you have to get rid of. ~J.D. Salinger")
 
 
 #Creating Spiritual Quotes List
