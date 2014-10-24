@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'rspec-rails', group: [:development, :test]
+
 gem 'rails_12factor', group: :production
 
 gem 'pry-rails', group: :development
