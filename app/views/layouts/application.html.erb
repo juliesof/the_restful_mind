@@ -1,36 +1,70 @@
 <!DOCTYPE html>
+
 <html>
-<head>
-  <title>TheRestfulMind</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <head>
 
-  <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
-  <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
+    <!-- Website Title & Description for Search Engine purposes -->
+    <title>The Restful Mind: A Meditation Tracking App</title>
+    <meta name="description" content="Earn badges as you track your meditation sessions.">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Mobile viewport optimized -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <%= csrf_meta_tags %>
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/javascripts/libraries/jquery-1.8.2.min.js"></script>
 
-  <style>
-    body { margin: 40px;}
-  </style>
+    <!-- Bootstrap JS-->
+    <script src="assets/javascripts/libraries/bootstrap.min.js"></script>
+    <script src="assets/javascripts/libraries/bootstrap.js"></script>
 
-</head>
+    <!-- Bootstrap CSS -->
+    <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
+    <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+    <link href="assets/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="assets/stylesheets/bootstrap-glyphicons.css.scss" rel="stylesheet">
 
-<body>
+    <!-- Custom CSS -->
+    <link href="assets/stylesheets/styles.css"rel="stylesheet">
 
-  <% flash.each do |name, msg| %>
-    <% if msg.is_a?(String) %>
-      <%= content_tag :div, msg, :class => "flash_#{name}" %>
-    <% end %>
-  <% end %>
+    <!-- Include Modernizr -->
+    <script src="assets/javascripts/libraries/modernizr-2.6.2.min.js"></script>
 
-  <%= render partial: "layouts/navbar" %>
-  <%= render partial: "layouts/inspirational_quotes" %>
-  <%= render partial: "layouts/badges" %>
 
-  <%= yield %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
 
-</body>
+  </head>
+
+  <body>
+
+    <div class="container" id="main">
+
+      <%= render partial: "layouts/navbar" %>
+      <br><br><br><br><br><br><br><br><br>
+
+      <div class="col-sm-4" id="quotes">
+        <%= render partial: "layouts/inspirational_quotes" %>
+      </div> <!-- end quotes partia -->
+
+      <div class="col-sm-8" id="main-content">
+        <%= yield %>
+      </div><!-- end main-content -->
+
+      <div class="col-sm-4" id="badges">
+        <%= render partial: "layouts/badges" %>
+      </div> <!-- end badges -->
+
+
+      <% flash.each do |name, msg| %>
+        <% if msg.is_a?(String) %>
+          <%= content_tag :div, msg, :class => "flash_#{name}" %>
+        <% end %>
+      <% end %>
+
+    </div><!-- end main -->
+  </body>
 </html>
