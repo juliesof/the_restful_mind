@@ -16,11 +16,13 @@
     <script src="assets/javascripts/libraries/jquery-1.8.2.min.js"></script>
 
     <!-- Bootstrap JS-->
+    <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
     <script src="assets/javascripts/libraries/bootstrap.min.js"></script>
     <script src="assets/javascripts/libraries/bootstrap.js"></script>
+    <!-- Include Modernizr -->
+    <script src="assets/javascripts/libraries/modernizr-2.6.2.min.js"></script>
 
     <!-- Bootstrap CSS -->
-    <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
     <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
     <link href="assets/stylesheets/bootstrap.min.css" rel="stylesheet">
     <link href="assets/stylesheets/bootstrap.css" rel="stylesheet">
@@ -28,10 +30,6 @@
 
     <!-- Custom CSS -->
     <link href="assets/stylesheets/styles.css"rel="stylesheet">
-
-    <!-- Include Modernizr -->
-    <script src="assets/javascripts/libraries/modernizr-2.6.2.min.js"></script>
-
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -44,20 +42,22 @@
     <div class="container" id="main">
 
       <%= render partial: "layouts/navbar" %>
-      <br><br><br><br><br><br><br><br><br>
 
-      <div class="col-sm-4" id="quotes">
-        <%= render partial: "layouts/inspirational_quotes" %>
-      </div> <!-- end quotes partia -->
+      <div class="row">
+        <div class="col-sm-4" id="quotes">
+          <%= render partial: "layouts/inspirational_quotes" %>
+        </div> <!-- end quotes partia -->
 
-      <div class="col-sm-8" id="main-content">
-        <%= yield %>
-      </div><!-- end main-content -->
+        <div class="col-sm-8" id="main-content">
+          <%= yield %>
+        </div><!-- end main-content -->
+      </div> <!-- end row -->
 
-      <div class="col-sm-4" id="badges">
-        <%= render partial: "layouts/badges" %>
-      </div> <!-- end badges -->
-
+      <div class="row">
+        <div class="col-sm-4" id="badges">
+          <%= render partial: "layouts/badges" %>
+        </div> <!-- end badges -->
+      </div>
 
       <% flash.each do |name, msg| %>
         <% if msg.is_a?(String) %>

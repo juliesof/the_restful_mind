@@ -1,14 +1,3 @@
-/*
-
-My Custom CSS
-=============
-
-Author:  Brad Hussey
-Updated: August 2013
-Notes:   Hand coded for Udemy.com
-
-*/
-
 
 /* --------------------------------------
    Layout
@@ -24,13 +13,6 @@ Notes:   Hand coded for Udemy.com
 
 #inputMessage {
   margin-bottom: 15px;
-}
-
-footer {
-  background: #333;
-  color: #eee;
-  font-size: 11px;
-  padding: 20px;
 }
 
 
@@ -61,43 +43,16 @@ ul.unstyled {
    Navbar
    -------------------------------------- */
 
-#searchInput {
-  width: 200px;
-}
-
 .navbar-brand {
   padding: 13px 15px;
 }
 
-
-/* --------------------------------------
-   Carousel
-   -------------------------------------- */
-
-#myCarousel {
-  margin-top: 60px;
+.dropdown {
+  margin-top: 10px;
 }
 
-.carousel-caption {
-  font-size: 24px;
-}
-
-.carousel-caption h4 {
-  font-size: 32px;
-}
-
-#myCarousel .item { height: 400px; }
-
-#slide1 {
-  background: url('../../images/carousel_medium_01.jpg') top center no-repeat;
-}
-
-#slide2 {
-  background: url('../../images/carousel_medium_02.jpg') top center no-repeat;
-}
-
-#slide3 {
-  background: url('../../images/carousel_medium_03.jpg') top center no-repeat;
+.dropdown .glyphicon {
+  margin-right: 5px;
 }
 
 
@@ -108,6 +63,10 @@ ul.unstyled {
 .alert {
   margin-top: 20px;
   display: none;
+}
+
+#main-content, #quotes {
+  margin-top: 100px;
 }
 
 .well {
