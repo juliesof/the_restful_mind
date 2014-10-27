@@ -1,12 +1,15 @@
-<div id='earned-badges-box'>
-  <!-- <span style="float:right"> -->
-  <% if user_signed_in? %>
-    <h2>Your Badges</h2>
-    <% @earned_badges.each do |eb| %>
-      <ul>
-      <ol><%= eb.badge_type.img_url %></ol><br>
-      </ul>
-    <% end %>
-  <% end %>
-  <!-- </span> -->
-</div>
+<div class="panel">
+  <div class="panel-heading">
+    <h3 class="panel-title">Your Badges</h3>
+    <ul>
+      <% if user_signed_in? %>
+        <% @earned_badges.each do |eb| %>
+          <li><%= eb.badge_type.img_url %></li>
+        <% end %>
+                <!-- do a if statemen for each badge type on a separate line to say if this thing that comes up from the database equals this string then display this image and have the images line up next to each other with appropriate margins -->
+      <% end %>
+    </ul>
+  </div> <!-- end panel heading -->
+</div> <!-- end panel -->
+
+

@@ -46,18 +46,23 @@
       <div class="row">
         <div class="col-sm-4" id="quotes">
           <%= render partial: "layouts/inspirational_quotes" %>
-        </div> <!-- end quotes partia -->
+        </div> <!-- end quotes partial -->
 
         <div class="col-sm-8" id="main-content">
           <%= yield %>
         </div><!-- end main-content -->
       </div> <!-- end row -->
 
-      <div class="row">
-        <div class="col-sm-4" id="badges">
-          <%= render partial: "layouts/badges" %>
-        </div> <!-- end badges -->
-      </div>
+    <div class="row">
+      <div class="col-sm-4" id="earned-badges-panel">
+        <%= render partial: "layouts/badges" %>
+      </div> <!-- end earned badges panel -->
+    </div>
+
+
+
+
+
 
       <% flash.each do |name, msg| %>
         <% if msg.is_a?(String) %>

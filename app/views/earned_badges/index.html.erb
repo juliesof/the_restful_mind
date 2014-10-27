@@ -1,9 +1,7 @@
-<h2>Stats about your sitting</h2>
-
-<div id='earned-badges-box'>
-  <% if user_signed_in? %>
-    <% @earned_badges.badges.each do |eb| %>
-      <%= eb.img_url %>
+<% if user_signed_in? %>
+  <% @earned_badges.badges.each do |eb| %>
+    <%= eb.img_url %>
   <% end %>
-</div>
+<% end %>
+
 
