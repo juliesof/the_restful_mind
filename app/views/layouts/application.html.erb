@@ -43,30 +43,27 @@
         <%= render partial: "layouts/navbar" %>
       </div><!-- end navbar -->
 
-      <div class="row-fluid">
-        <div class="col-sm-4">
-          <div id="quotes-panel">
-            <%= render partial: "layouts/inspirational_quotes" %>
-          </div>
 
-          <div id="earned-badges-panel">
-            <%= render partial: "layouts/badges" %>
-          </div>
-        </div><!-- end span4 -->
-        <div class="col-sm-4">
+        <div class="row-fluid">
+          <div class="col-sm-4">
+            <% if user_signed_in? %>
+              <div id="quotes-panel">
+               <%= render partial: "layouts/inspirational_quotes" %>
+              </div>
+
+              <div id="earned-badges-panel">
+               <%= render partial: "layouts/badges" %>
+              </div>
+            <% end %>
+          </div><!-- end col-sm-4 -->
+
+
+        <div class="col-sm-8">
           <div id="main-content">
             <%= yield %>
           </div>
-        </div> <!-- end span8 -->
+        </div> <!-- end col-sm-8 -->
       </div><!-- end row fluid -->
     </div> <!-- end container fluid main -->
-
-        <% flash.each do |name, msg| %>
-          <% if msg.is_a?(String) %>
-            <%= content_tag :div, msg, :class => "flash_#{name}" %>
-          <% end %>
-        <% end %>
-      </div><!-- end span12 -->
-    </div><!-- end row fluid -->
   </body>
 </html>
