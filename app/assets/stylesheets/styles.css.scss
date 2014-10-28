@@ -65,8 +65,14 @@ ul.unstyled {
   display: none;
 }
 
-#main-content, #quotes {
+#main-content {
   margin-top: 100px;
+  text-align: center;
+}
+
+#quotes-panel {
+  margin-top: 100px;
+  margin-bottom: 50px;
 }
 
 .well {

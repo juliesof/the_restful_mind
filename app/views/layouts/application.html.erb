@@ -38,38 +38,35 @@
   </head>
 
   <body>
-
     <div class="container" id="main">
+      <div class="navbar navbar-fixed-top">
+        <%= render partial: "layouts/navbar" %>
+      </div><!-- end navbar -->
 
-      <%= render partial: "layouts/navbar" %>
+      <div class="row-fluid">
+        <div class="col-sm-4">
+          <div id="quotes-panel">
+            <%= render partial: "layouts/inspirational_quotes" %>
+          </div>
 
-      <div class="row">
-        <div class="col-sm-4" id="quotes">
-          <%= render partial: "layouts/inspirational_quotes" %>
-        </div> <!-- end quotes partial -->
+          <div id="earned-badges-panel">
+            <%= render partial: "layouts/badges" %>
+          </div>
+        </div><!-- end span4 -->
+        <div class="col-sm-4">
+          <div id="main-content">
+            <%= yield %>
+          </div>
+        </div> <!-- end span8 -->
+      </div><!-- end row fluid -->
+    </div> <!-- end container fluid main -->
 
-        <div class="col-sm-8" id="main-content">
-          <%= yield %>
-        </div><!-- end main-content -->
-      </div> <!-- end row -->
-
-    <div class="row">
-      <div class="col-sm-4" id="earned-badges-panel">
-        <%= render partial: "layouts/badges" %>
-      </div> <!-- end earned badges panel -->
-    </div>
-
-
-
-
-
-
-      <% flash.each do |name, msg| %>
-        <% if msg.is_a?(String) %>
-          <%= content_tag :div, msg, :class => "flash_#{name}" %>
+        <% flash.each do |name, msg| %>
+          <% if msg.is_a?(String) %>
+            <%= content_tag :div, msg, :class => "flash_#{name}" %>
+          <% end %>
         <% end %>
-      <% end %>
-
-    </div><!-- end main -->
+      </div><!-- end span12 -->
+    </div><!-- end row fluid -->
   </body>
 </html>
