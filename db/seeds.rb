@@ -21,7 +21,7 @@ Quote.create!(quote_list: ql1, text: "You asked me how to get out of the finite 
 
 #Creating Spiritual Quotes List
 Quote.create!(quote_list: ql2, text: 'Feelings come and go like clouds in a windy sky. Conscious breathing is my anchor. ~Thich Nhat Hanh')
-Quote.create!(quote_list: ql2, text: 'Work is not always required. There is such a thing as sacredleness. ~George MacDonald')
+Quote.create!(quote_list: ql2, text: 'Work is not always required. There is such a thing as sacred idleness. ~George MacDonald')
 Quote.create!(quote_list: ql2, text: 'I have lived with several Zen masters -- all of them cats. ~Eckhart Tolle')
 Quote.create!(quote_list: ql2, text: 'Undisturbed calmness of mind is attained by cultivating friendliness toward the happy, compassion for the unhappy, delight in the virtuous, and indifference toward the wicked. ~Patanjali')
 Quote.create!(quote_list: ql2, text: 'If we learn to open our hearts, anyone, including the people who drive us crazy, can be our teacher. ~Pema Chodron')

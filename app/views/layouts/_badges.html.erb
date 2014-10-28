@@ -1,14 +1,66 @@
 <div class="panel">
   <div class="panel-heading">
-    <h3 class="panel-title">Your Badges</h3>
-    <ul>
+    <h3 class="panel-title" id="badges-heading">Badges You've Earned</h3>
+
+    <div class="panel-body">
       <% if user_signed_in? %>
-        <% @earned_badges.each do |eb| %>
-          <li><%= eb.badge_type.img_url %></li>
-        <% end %>
-                <!-- do a if statemen for each badge type on a separate line to say if this thing that comes up from the database equals this string then display this image and have the images line up next to each other with appropriate margins -->
-      <% end %>
-    </ul>
+
+        <!-- display day badges row -->
+        <div class="row">
+          <div class="col-sm-12">
+            <% @earned_badges.each do |eb| %>
+              <% if eb.badge_type.name == "day" %>
+                <%= eb.badge_type.img_url %>
+              <% end %>
+            <% end %> <!-- end do block -->
+          </div> <!--end col sm 12 -->
+        </div> <!--end row -->
+
+        <!-- display week badges row -->
+        <div class="row">
+          <div class="col-sm-12">
+            <% @earned_badges.each do |eb| %>
+              <% if eb.badge_type.name == "week" %>
+                <%= eb.badge_type.img_url %>
+              <% end %>
+            <% end %> <!-- end do block -->
+          </div> <!--end col sm 12 -->
+        </div> <!--end row -->
+
+        <!-- display month badges row -->
+        <div class="row">
+          <div class="col-sm-12">
+            <% @earned_badges.each do |eb| %>
+              <% if eb.badge_type.name == "month" %>
+                <%= eb.badge_type.img_url %>
+              <% end %>
+            <% end %> <!-- end do block -->
+          </div> <!--end col sm 12 -->
+        </div> <!--end row -->
+
+        <!-- display quarter badges row -->
+        <div class="row">
+          <div class="col-sm-12">
+            <% @earned_badges.each do |eb| %>
+              <% if eb.badge_type.name == "quarter" %>
+                <%= eb.badge_type.img_url %>
+              <% end %>
+            <% end %> <!-- end do block -->
+          </div> <!--end col sm 12 -->
+        </div> <!--end row -->
+
+        <!-- display year badges row -->
+        <div class="row">
+          <div class="col-sm-12">
+            <% @earned_badges.each do |eb| %>
+              <% if eb.badge_type.name == "year" %>
+                <%= eb.badge_type.img_url %>
+              <% end %>
+            <% end %> <!-- end do block -->
+          </div> <!--end col sm 12 -->
+        </div> <!--end row -->
+      <% end %> <!-- end user signed in -->
+    </div> <!-- end panel-body -->
   </div> <!-- end panel heading -->
 </div> <!-- end panel -->
 
