@@ -8,9 +8,10 @@
         <!-- display day badges row -->
         <div class="row">
           <div class="col-sm-12">
+            <h5 id="badges-heading">Day Badges</h5>
             <% @earned_badges.each do |eb| %>
               <% if eb.badge_type.name == "day" %>
-                <%= eb.badge_type.img_url %>
+                <img src=<%= asset_path('sunset_meditation.jpg') %> >
               <% end %>
             <% end %> <!-- end do block -->
           </div> <!--end col sm 12 -->
@@ -19,9 +20,10 @@
         <!-- display week badges row -->
         <div class="row">
           <div class="col-sm-12">
+            <h5 id="badges-heading">Week Badges</h5>
             <% @earned_badges.each do |eb| %>
               <% if eb.badge_type.name == "week" %>
-                <%= eb.badge_type.img_url %>
+                <img src=<%= asset_path('lotus.jpg') %> >
               <% end %>
             <% end %> <!-- end do block -->
           </div> <!--end col sm 12 -->
@@ -30,9 +32,10 @@
         <!-- display month badges row -->
         <div class="row">
           <div class="col-sm-12">
+            <h5 id="badges-heading">Month Badges</h5>
             <% @earned_badges.each do |eb| %>
               <% if eb.badge_type.name == "month" %>
-                <%= eb.badge_type.img_url %>
+                <img src=<%= asset_path('koi_drawing.jpg') %> >
               <% end %>
             <% end %> <!-- end do block -->
           </div> <!--end col sm 12 -->
@@ -41,9 +44,10 @@
         <!-- display quarter badges row -->
         <div class="row">
           <div class="col-sm-12">
+            <h5 id="badges-heading">Quarter Badges</h5>
             <% @earned_badges.each do |eb| %>
               <% if eb.badge_type.name == "quarter" %>
-                <%= eb.badge_type.img_url %>
+                <img src=<%= asset_path('coloful_circle.jpg') %> >
               <% end %>
             <% end %> <!-- end do block -->
           </div> <!--end col sm 12 -->
@@ -52,9 +56,10 @@
         <!-- display year badges row -->
         <div class="row">
           <div class="col-sm-12">
+            <h5 id="badges-heading">Year Badges</h5>
             <% @earned_badges.each do |eb| %>
               <% if eb.badge_type.name == "year" %>
-                <%= eb.badge_type.img_url %>
+                <img src=<%= asset_path('golden_buddha.jpg') %> >
               <% end %>
             <% end %> <!-- end do block -->
           </div> <!--end col sm 12 -->
